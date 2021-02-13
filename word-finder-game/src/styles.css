@@ -1,0 +1,48 @@
+button {
+    height: 80px;
+    width: 80px;
+    font-size: 50px;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.clicked-button {
+    height: 80px;
+    width: 80px;
+    font-size: 50px;
+    background-color: red;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.start-game-button {
+    width: 106px;
+    font-size: 25px
+}
+.flex-container {
+    display: flex;
+    flex-direction: row
+}
+.word-list {
+    padding: 10px;
+    margin-left: 20px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 294px;
+    width: 200px;
+    border: solid;
+    border-color: black;
+}
+#timer {
+    height: 80px;
+    font-size: 60px;
+    text-align: center;
+    text-emphasis: bold;
+}
+.wrapper {
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+#word-count {
+    margin-left: 25px;
+}
