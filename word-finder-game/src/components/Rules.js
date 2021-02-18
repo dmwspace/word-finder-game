@@ -10,6 +10,7 @@ function Rules() {
             <h1>'Undo' clears the tiles.</h1>
             <h1>Scoring is one point for a three letter word, two points for a four letter word,
                 three points for a five letter word, etc.</h1>
+            <h1>Invalid words and words already used do not count.</h1>
         </div>
     )
 

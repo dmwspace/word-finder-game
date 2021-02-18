@@ -10,6 +10,8 @@ function Hooks() {
     "P", "P", "Qu", "R", "S", "S", "T",
     "U", "V", "W", "X", "Y", "Z"]*/
 
+    const data = require('./words_dictionary.json')
+
     const legalMoves = 
         {
             zero: ["one", "four", "five"], 
@@ -31,7 +33,8 @@ function Hooks() {
         }
     
     const [wordCount, setWordCount] = useState(0)
-    const [timeRemaining, setTimeRemaining] = useState(60)
+    const [pointCount, setPointCount] = useState(0)
+    const [timeRemaining, setTimeRemaining] = useState(180)
     const [isTimeRunning, setIsTimeRunning] = useState(false)
     const [buttonLetters, setButtonLetters] = useState([])
     const [newWord, setNewWord] = useState("")
@@ -65,7 +68,7 @@ function Hooks() {
         setNewWord("")
         setSubmittedWord([])
         resetStyle()
-        setTimeRemaining(60)
+        setTimeRemaining(180)
         setIsTimeRunning(true)
         setWordCount(0)
         let firstArr = []
@@ -113,11 +116,22 @@ function Hooks() {
         setIsTimeRunning(false)
     }
 
-    function handleSubmit() {
-        setNewWord("")
+    function handleSubmit() { 
+        if (data.hasOwnProperty(newWord) && !submittedWord.includes(newWord)) {
+            setWordCount(submittedWord => submittedWord + 1)
+            setPointCount(pointCount => pointCount + newWord.length - 2)
+            setSubmittedWord(submittedWord => [...submittedWord, newWord])
+        } else {
+            if (!data.hasOwnProperty(newWord)) {
+                setSubmittedWord(submittedWord => [...submittedWord, newWord + "--not found--"])
+            }
+            if (submittedWord.includes(newWord)) {
+                setSubmittedWord(submittedWord => [...submittedWord, newWord + "--word used--"])
+            }
+            
+        }
         setUsedButtons([])
-        setSubmittedWord(submittedWord => [...submittedWord, newWord]) 
-        setWordCount(submittedWord.length)
+        setNewWord("")
         resetStyle()  
     }
     function reverse() {
@@ -142,7 +156,8 @@ function Hooks() {
             buttonStyle,
             timeRemaining,
             wordCount,
-            isTimeRunning
+            isTimeRunning,
+            pointCount
         }
     )  
 }

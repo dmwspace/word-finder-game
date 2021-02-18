@@ -14,13 +14,17 @@ function Game() {
         buttonStyle,
         timeRemaining,
         wordCount,
-        isTimeRunning
+        isTimeRunning,
+        pointCount
     } = Hooks()
 
     const wordList = submittedWord.map(word => <h2 key={word}>{word}</h2>)
-    // let min = Math.floor(timeRemaining / 60)
-    // let sec = timeRemaining % 60
-    // let formattedTime = min + ":" + sec
+    let min = Math.floor(timeRemaining / 60)
+    let sec = timeRemaining % 60
+
+    let formattedTime = (timeRemaining === 0) ?
+        "Time's up!" :
+        ((min < 1 ? "" : min + ":") + (sec < 10 ? "0" + sec : sec))
     return (
         <div className="flex-container">
             <div>
@@ -159,17 +163,18 @@ function Game() {
                 <button
                     className="start-game-button"
                     onClick={startGame}
-                    disabled={timeRemaining < 60 && timeRemaining > 0}
+                    disabled={timeRemaining < 180 && timeRemaining > 0}
                 >Start</button><span style={{fontSize: 50}}> {newWord}</span>
             </div>
             <div id="wrapper">
                 <div id="timer">
-                    {timeRemaining}
+                    {formattedTime}
                 </div>
-                <div className="word-list">
+                <div id="word-list">
                     {wordList}
                 </div>
-                <h1 id="word-count">Word Count: {wordCount}</h1>
+                <h1 className="count-area">Word Count: {wordCount}</h1>
+                <h1 className="count-area">Total Points: {pointCount}</h1>
             </div> 
         </div>
     )
