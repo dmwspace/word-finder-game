@@ -116,7 +116,7 @@ function Hooks(props) {
     }
 
     function handleSubmit() { 
-        if (data.hasOwnProperty(newWord) && !submittedWord.includes(newWord)) {
+        if (data.hasOwnProperty(newWord) && !submittedWord.includes(newWord) && newWord.length >= 3) {
             setWordCount(submittedWord => submittedWord + 1)
             setPointCount(pointCount => pointCount + newWord.length - 2)
             setSubmittedWord(submittedWord => [...submittedWord, newWord])
@@ -126,6 +126,9 @@ function Hooks(props) {
             }
             if (submittedWord.includes(newWord)) {
                 setSubmittedWord(submittedWord => [...submittedWord, newWord + "--word used--"])
+            }
+            if (newWord.length < 3) {
+                setSubmittedWord(submittedWord => [...submittedWord, newWord + "--too short--"])
             }
         }
         setUsedButtons([])
