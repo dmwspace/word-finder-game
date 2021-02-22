@@ -1,6 +1,6 @@
-import React from "react"
+import React, {useEffect, useRef} from "react"
 import Hooks from "./Hooks"
-//import StayScrolled from "react-stay-scrolled"
+import useStayScrolled from "react-stay-scrolled"
 
 function Game() {
     const {
@@ -19,12 +19,21 @@ function Game() {
     } = Hooks()
 
     const wordList = submittedWord.map(word => <h2 key={word}>{word}</h2>)
+
     let min = Math.floor(timeRemaining / 60)
     let sec = timeRemaining % 60
 
     let formattedTime = (timeRemaining === 0) ?
         "Time's up!" :
         ((min < 1 ? "" : min + ":") + (sec < 10 ? "0" + sec : sec))
+
+    const wordListRef = useRef(null)
+    const{ stayScrolled } = useStayScrolled(wordListRef)
+
+    useEffect(() => {
+        stayScrolled()
+        }, [submittedWord])
+
     return (
         <div className="flex-container">
             <div>
@@ -170,7 +179,7 @@ function Game() {
                 <div id="timer">
                     {formattedTime}
                 </div>
-                <div id="word-list">
+                <div id="word-list" ref={wordListRef}>
                     {wordList}
                 </div>
                 <h1 className="count-area">Word Count: {wordCount}</h1>

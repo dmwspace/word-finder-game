@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import tiles from "./Tiles.js"
 
-function Hooks() {
+function Hooks(props) {
 
     /*const letterArr = ["A", "A",
     "B", "B", "C", "D", "E", "E", "E", "E",
@@ -71,6 +71,7 @@ function Hooks() {
         setTimeRemaining(180)
         setIsTimeRunning(true)
         setWordCount(0)
+        setPointCount(0)
         let firstArr = []
         const randNum = Math.floor(Math.random() * tiles[1].length)
         tiles.map(item => firstArr.push(item[randNum]))
@@ -92,13 +93,11 @@ function Hooks() {
                 setUsedButtons([...usedButtons, name])
                 setPrevName(name)
                 setButtonStyle(prevStyle => ({...prevStyle, [name]: "clicked-button"}))
-                console.log(buttonStyle)
         } else if ((!usedButtons.includes(name)) && (legalMoves[`${name}`].includes(`${prevName}`))) {
             setNewWord(prevState => prevState + lowerCase)
             setUsedButtons([...usedButtons, name])
             setPrevName(name)
             setButtonStyle(prevStyle => ({...prevStyle, [name]: "clicked-button"}))
-            console.log(buttonStyle)
         } else {}
     }
 
@@ -128,7 +127,6 @@ function Hooks() {
             if (submittedWord.includes(newWord)) {
                 setSubmittedWord(submittedWord => [...submittedWord, newWord + "--word used--"])
             }
-            
         }
         setUsedButtons([])
         setNewWord("")
