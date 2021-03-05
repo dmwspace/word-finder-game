@@ -37,13 +37,11 @@ function Game() {
     return (
         <div className="flex-container">
             <div>
-                <button
-                    style={{width: 160, fontSize: 25}}
+                <button className="sub-and-undo"
                     onClick={handleSubmit}
                     disabled={!isTimeRunning}
                 >Submit</button>
-                <button 
-                    style={{width: 160, fontSize: 25}}
+                <button className="sub-and-undo"
                     onClick={reverse}
                     disabled={!isTimeRunning}
                 >Undo</button>
@@ -173,7 +171,7 @@ function Game() {
                     className="start-game-button"
                     onClick={startGame}
                     disabled={timeRemaining < 180 && timeRemaining > 0}
-                >Start</button><span style={{fontSize: 50}}> {newWord}</span>
+                >Start</button><span id="word"> {newWord}</span>
             </div>
             <div id="wrapper">
                 <div id="timer">

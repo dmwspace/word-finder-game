@@ -7,12 +7,8 @@ function Header() {
     return (
         <Router>
             <header>
-                <Link to="/game">
-                    <h1>Game</h1>
-                </Link>
-                <Link to="/rules">
-                    <h1>Rules</h1>
-                </Link>
+                <Link to="/game"><h1>Game</h1></Link>
+                <Link to="/rules"><h1>Rules</h1></Link>
             </header>
             <Switch>
                 <Route exact path="/game">

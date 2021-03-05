@@ -1,51 +1,194 @@
-button {
-    height: 80px;
-    width: 80px;
-    font-size: 50px;
-    background-color: white;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+@media screen and (min-width: 600px) {
+    #word {
+        font-size: 40px;
+    }
+    .sub-and-undo {
+        font-size: 25px;
+        width: 160px;
+    }
+    button {
+        height: 80px;
+        width: 80px;
+        font-size: 50px;
+        background-color: white;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .clicked-button {
+        height: 80px;
+        width: 80px;
+        font-size: 50px;
+        background-color: red;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .start-game-button {
+        width: 106px;
+        font-size: 25px
+    }
+    .flex-container {
+        margin: auto;
+        display: flex;
+        flex-direction: row
+    }
+    #word-list {
+        padding: 10px;
+        margin-left: 20px;
+        font-size: 10px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 294px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        overflow-anchor: none;
+    }
+    #timer {
+        height: 70px;
+        font-size: 50px;
+        text-align: center;
+        text-emphasis: bold;
+    }
+    .wrapper {
+        overflow: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .count-area {
+        text-align: center;
+        font-size: 20px;
+    }
+    header {
+        text-align: left;
+        font-size: 15px;
+    }
 }
-.clicked-button {
-    height: 80px;
-    width: 80px;
-    font-size: 50px;
-    background-color: red;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
+@media screen and (max-width: 599px) {
+    #word {
+        font-size: 24px;
+    }
+    .sub-and-undo {
+        font-size: 18px;
+        width: 96px;
+    }
+    button {
+        height: 48px;
+        width: 48px;
+        font-size: 30px;
+        background-color: white;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .clicked-button {
+        height: 48px;
+        width: 48px;
+        font-size: 30px;
+        background-color: red;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .start-game-button {
+        width: 64px;
+        font-size: 15px
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+    }
+    #word-list {
+        padding: 10px;
+        margin-left: 10px;
+        font-size: 7px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 147px;
+        width: 100px;
+        border: solid;
+        border-color: black;
+        overflow-anchor: none;
+    }
+    #timer {
+        height: 35px;
+        font-size: 25px;
+        text-align: center;
+        text-emphasis: bold;
+    }
+    .wrapper {
+        overflow: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .count-area {
+        text-align: center;
+        font-size: 10px;
+    }
+    header {
+        text-align: center;
+        font-size: 7px;
+    }
 }
-.start-game-button {
-    width: 106px;
-    font-size: 25px
-}
-.flex-container {
-    display: flex;
-    flex-direction: row
-}
-#word-list {
-    padding: 10px;
-    margin-left: 20px;
-    font-size: 10px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 294px;
-    width: 200px;
-    border: solid;
-    border-color: black;
-    overflow-anchor: none;
-}
-#timer {
-    height: 70px;
-    font-size: 50px;
-    text-align: center;
-    text-emphasis: bold;
-}
-.wrapper {
-    overflow: auto;
-    display: flex;
-    flex-direction: column-reverse;
-}
-.count-area {
-    text-align: center;
-    font-size: 20px;
+@media screen and (min-width: 1200px) {
+    .sub-and-undo {
+        font-size: 25px;
+        width: 160px;
+    }
+    button {
+        height: 80px;
+        width: 80px;
+        font-size: 50px;
+        background-color: white;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .clicked-button {
+        height: 80px;
+        width: 80px;
+        font-size: 50px;
+        background-color: red;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .start-game-button {
+        width: 106px;
+        font-size: 25px
+    }
+    .flex-container {
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        border: 3px solid black;
+    }
+    #word-list {
+        padding: 10px;
+        margin-left: 20px;
+        font-size: 10px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 294px;
+        width: 200px;
+        border: solid;
+        border-color: black;
+        overflow-anchor: none;
+    }
+    #timer {
+        height: 70px;
+        font-size: 50px;
+        text-align: center;
+        text-emphasis: bold;
+    }
+    .wrapper {
+        overflow: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .count-area {
+        text-align: center;
+        font-size: 20px;
+    }
+    header {
+        text-align: center;
+        font-size: 15px;
+    }
 }
