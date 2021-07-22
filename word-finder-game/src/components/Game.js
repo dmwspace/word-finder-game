@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from "react"
 import Hooks from "./Hooks"
 import useStayScrolled from "react-stay-scrolled"
+/* eslint-disable react-hooks/exhaustive-deps */
 
 function Game() {
     const {

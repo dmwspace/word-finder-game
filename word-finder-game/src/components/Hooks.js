@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react"
 import tiles from "./Tiles.js"
+/* eslint-disable react-hooks/exhaustive-deps */
 
 function Hooks(props) {
 
