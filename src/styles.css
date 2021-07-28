@@ -32,7 +32,6 @@
         margin: auto;
         display: flex;
         flex-direction: row;
-        border: 3px solid black;
     }
     #word-list {
         margin: 10px;
@@ -164,7 +163,6 @@
         margin: auto;
         display: flex;
         flex-direction: row;
-        border: 3px solid black;
     }
     #word-list {
         padding: 10px;
@@ -224,14 +222,14 @@
         font-family: Arial, Helvetica, sans-serif;
     }
     .start-game-button {
-        width: 48px;
+        width: 96px;
         font-size: 12px
     }
     .flex-container {
-        width: 300px;
+        width: 350px;
         display: flex;
         flex-direction: row;
-        margin: auto;
+        margin: auto
     }
     #word-list {
         padding: 8px;
@@ -263,6 +261,6 @@
     }
     header {
         text-align: center;
-        font-size: 5px;
+        font-size: 1em;
     }
 }
