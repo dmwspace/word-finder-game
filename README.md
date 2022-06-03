@@ -18,3 +18,5 @@ The most basic problem was how to make sure that the player could not make illeg
 
 A second problem was that the submitted word list was staying at the beginning of the list and wouldn’t scroll. Ultimately the solution that I found was, as I stated above, to use a React package called react-stay-scrolled. This package allowed the submitted word list to stay scrolled at the bottom of the list where each new word was placed.
 
+A third problem was that I needed to find a word list that I could use to look for matches for words that have been submitted. Eventually I found words_dictionary.json, a json file that contains some 250000 words and turned out to be excellent for this use.
+
